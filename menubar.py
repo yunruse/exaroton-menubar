@@ -30,9 +30,8 @@ class ExarotonBar(rumps.App):
         self.menu.add(self.timer)
     
     @rumps.timer(10)
-    def update_icon(self, state=None):
+    def update(self, state=None):
         self.server = exa.get_server(self.server.id)
-        print(exa.get_credit_pools())
 
         p = self.server.players.count
         pmax = self.server.players.max
@@ -49,8 +48,7 @@ class ExarotonBar(rumps.App):
         theme = 'dark'
         
         self.icon = f'icons/{theme}/{self.server.status}.png'
-        # TODO: a timer..?
-    
+
     @rumps.clicked('Console')
     def console(self, state=None):
         webbrowser.open_new_tab('https://exaroton.com/console/')
