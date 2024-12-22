@@ -39,8 +39,8 @@ class ExarotonBar(rumps.App):
 
         for name, icon in (
             ('Start', 'Starting'),
-            ('Start', 'Restarting'),
-            ('Start', 'Stopping'),
+            ('Restart', 'Restarting'),
+            ('Stop', 'Stopping'),
         ):
             self._menu[name].set_icon(f'icons/dark/{icon}.png', (16, 16))
 
